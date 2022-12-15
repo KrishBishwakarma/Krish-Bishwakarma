@@ -104,6 +104,7 @@ section .title::after{
 .navbar .logo a span{
     color: crimson;
     transition: all 0.3s ease;
+    animation: typenbtn 10s infinite ease-in-out;
 }
 .navbar.sticky .logo a span{
     color: #fff;
@@ -681,7 +682,7 @@ footer span a:hover{
 }
 /* name text animation */
 .glowing-name{
-    animation: glow .5s infinite alternate;
+    animation: glow 5s infinite alternate;
 }
 @keyframes glow {
 
@@ -738,5 +739,34 @@ footer span a:hover{
     100%
     {
         background: indigo;
+    }
+}
+/* typing and button animation */
+@keyframes typenbtn {
+ 
+    
+    0%
+    {
+        color: crimson;
+    }
+    20%
+    {
+        color: skyblue;
+    }
+    40%
+    {
+        color: darkorange;
+    }
+    60%
+    {
+        color: darkgreen;
+    }
+    80%
+    {
+        color: darkviolet;
+    }
+    100%
+    {
+        color: indigo;
     }
 }

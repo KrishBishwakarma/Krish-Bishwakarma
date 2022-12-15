@@ -684,9 +684,32 @@ footer span a:hover{
     animation: glow .5s infinite alternate;
 }
 @keyframes glow {
-    to {
-        text-shadow: 0 0 10px red;
+
+    0%
+    {
+        text-shadow: 0 0 10px crimson;
     }
+    20%
+    {
+        text-shadow: 0 0 10px skyblue;
+    }
+    40%
+    {
+        text-shadow: 0 0 10px darkorange;
+    }
+    60%
+    {
+        text-shadow: 0 0 10px darkgreen;
+    }
+    80%
+    {
+        text-shadow: 0 0 10px darkviolet;
+    }
+    100%
+    {
+        text-shadow: 0 0 10px indigo;
+    }
+
 }
 /* nav bar animation */
 @keyframes change{
@@ -702,18 +725,18 @@ footer span a:hover{
     }
     40%
     {
-        background: greenyellow;
+        background: darkorange;
     }
     60%
     {
-        background: yellowgreen;
+        background: darkgreen;
     }
     80%
     {
-        background: black;
+        background: darkviolet;
     }
     100%
     {
-        background: paleturquoise;
+        background: indigo;
     }
 }

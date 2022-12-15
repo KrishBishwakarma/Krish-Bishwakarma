@@ -89,6 +89,7 @@ section .title::after{
 .navbar.sticky{
     padding: 15px 0;
     background: crimson;
+    animation: change 10s infinite ease-in-out;
 }
 .navbar .max-width{
     display: flex;
@@ -685,5 +686,34 @@ footer span a:hover{
 @keyframes glow {
     to {
         text-shadow: 0 0 10px red;
+    }
+}
+/* nav bar animation */
+@keyframes change{
+ 
+    
+    0%
+    {
+        background: crimson;
+    }
+    20%
+    {
+        background: skyblue;
+    }
+    40%
+    {
+        background: greenyellow;
+    }
+    60%
+    {
+        background: yellowgreen;
+    }
+    80%
+    {
+        background: black;
+    }
+    100%
+    {
+        background: paleturquoise;
     }
 }

@@ -1,21 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish Bishwakarma Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
-<body>
 
-    <h2> This website is currently under maintenance !!</h2>
-    <p>2082/01/26</p>
+<body>
+    <header>
+        <nav>
+            <h1>My Portfolio</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Hello, I'm Krish Bishwakarma</h2>
+        <p>Web Developer | Android Developer | CS Teacher</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="assets/profile.jpg" alt="Profile Photo" />
+        <p>I’m a web developer, android developer and computer science teacher with a passion for building beautiful and
+            functional websites, apps and digital solutions.</p>
+    </section>
+
+
+    <!-- <section id="about" data-aos="fade-up">
+        ...
+    </section> -->
+
+    <!-- <section id="projects" data-aos="zoom-in">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of the project and technologies used.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of another project.</p>
+        </div>
+    </section> -->
+
+    <section id="contact" data-aos="fade-right">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <div class="socials">
+        <a href="https://github.com/KrishBishwakarma/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/krish-bishwakarma" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/krishbishwakarmaa"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Krish Bishwakarma</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
+
 </html>

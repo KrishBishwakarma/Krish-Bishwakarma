@@ -7,6 +7,17 @@
 <meta name="description" content="Krish Bishwakarma - Computer Science Teacher, Software Developer and Technology Content Creator from Nepal.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Krish Bishwakarma">
+<meta property="og:description" content="Computer Science Teacher, Software Developer and Technology Content Creator from Nepal.">
+<meta property="og:url" content="https://krishbishwakarma.com.np">
+<meta property="og:image" content="https://krishbishwakarma.com.np/assets/profile.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Krish Bishwakarma">
+<meta name="twitter:description" content="Computer Science Teacher, Software Developer and Technology Content Creator from Nepal.">
+<meta name="twitter:image" content="https://krishbishwakarma.com.np/assets/profile.jpg">
+  <link rel="icon" href="assets/profile.jpg">
 <style>
 :root{
 --bg:#050816;
@@ -68,11 +79,46 @@ border:1px solid var(--border);
 color:white;background:rgba(255,255,255,.03);
 }
 .photo{
-height:450px;border-radius:30px;
-background:linear-gradient(135deg,#00d4ff,#2563eb);
-display:flex;align-items:center;justify-content:center;
-font-size:8rem;font-weight:900;
-box-shadow:0 0 60px rgba(0,212,255,.25);
+    position:relative;
+    height:500px;
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid rgba(0,212,255,.2);
+    box-shadow:0 0 60px rgba(0,212,255,.2);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(5,8,22,.6),
+        transparent
+    );
+}
+  .photo{
+    animation:glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:
+        0 0 25px rgba(0,212,255,.15),
+        0 0 50px rgba(0,212,255,.1);
+    }
+
+    to{
+        box-shadow:
+        0 0 50px rgba(0,212,255,.35),
+        0 0 100px rgba(0,212,255,.15);
+    }
 }
 .socials{margin-top:25px;display:flex;gap:14px}
 .socials a{
@@ -133,13 +179,43 @@ text-align:center;color:var(--muted)
 .hero-grid{grid-template-columns:1fr}
 .links{display:none}
 .photo{height:320px}
+
+
+  .nepali-name{
+    display:block;
+    font-size:.75rem;
+    color:#00d4ff;
+    font-weight:500;
+    margin-top:2px;
+}
+}
+
+
+  .typing{
+    margin-bottom:25px;
+    color:#00d4ff;
+    font-weight:700;
+    font-size:1.25rem;
+    min-height:30px;
+}
+
+.typing::after{
+    content:'|';
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
 }
 </style>
 </head>
 <body>
 <nav>
 <div class="container nav">
-<div class="logo">Krish Bishwakarma</div>
+<div class="logo">
+    Krish Bishwakarma
+    <span class="nepali-name">क्रिस विश्वकर्मा</span>
+</div>
 <div class="links">
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
@@ -153,7 +229,11 @@ text-align:center;color:var(--muted)
 <div class="container hero-grid">
 <div>
 <div class="tag">Developer • Educator • Tech Creator</div>
-<h1>Technology. AI. Education.</h1>
+<h1>Krish Bishwakarma</h1>
+
+<div class="typing">
+    <span id="typing-text"></span>
+</div>
 <p>Helping people understand technology through software development, educational content, and practical learning. Passionate about AI, programming, digital literacy, and building useful solutions.</p>
 
 <div class="btns">
@@ -170,7 +250,9 @@ text-align:center;color:var(--muted)
 </div>
 </div>
 
-<div class="photo">KB</div>
+<div class="photo">
+    <img src="assets/profile.jpg" alt="Krish Bishwakarma">
+</div>
 </div>
 </section>
 
@@ -237,5 +319,46 @@ I'm Krish Bishwakarma, a Computer Science teacher, software developer, and techn
 </section>
 
 <footer>© 2026 Krish Bishwakarma • All Rights Reserved</footer>
+
+  <script>
+const roles = [
+    "Computer Science Teacher",
+    "Software Developer",
+    "Technology Content Creator",
+    "AI Enthusiast"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const text = document.getElementById("typing-text");
+
+function type(){
+
+    const current = roles[roleIndex];
+
+    if(!deleting){
+        text.textContent = current.slice(0, ++charIndex);
+
+        if(charIndex === current.length){
+            deleting = true;
+            setTimeout(type, 1500);
+            return;
+        }
+    }else{
+        text.textContent = current.slice(0, --charIndex);
+
+        if(charIndex === 0){
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(type, deleting ? 50 : 90);
+}
+
+type();
+</script>
 </body>
 </html>
